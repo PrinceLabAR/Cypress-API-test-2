@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "b192966f-e7bc-4a54-95a9-ace32c1e7f5a",
+		"name": "Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30993330"
+	},
+	"item": [
+		{
+			"name": "BasicAuthenticationApp",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "DigestAuthentication",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Bearer_Token_Auth_github",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "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"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://api.github.com/users/repos"
+			},
+			"response": []
+		},
+		{
+			"name": "APIKeyAuth_openweathermap",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "b43b3dad25e543bc2222e1f2df487946",
+						"key": "appid",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/forecast/daily?q=Delhi",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"forecast",
+						"daily"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Delhi"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"value": "{{value}}",
+			"key": "{{key}}",
+			"in": "query"
+		}
+	},
+	"variable": [
+		{
+			"key": "value",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "key",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "in",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
